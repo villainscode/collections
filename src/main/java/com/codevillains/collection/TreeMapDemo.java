@@ -18,7 +18,7 @@ public class TreeMapDemo {
 		tm.put("존 도", new Double(-122.08));
 		tm.put("한효주님", null);
 		
-		// 맵 엔트리의 콜렉션 집합을 가져온다. 
+		// 맵 엔트리의 컬렉션 집합을 가져온다.
 		Set<?> set = tm.entrySet();
 		
 		// 반복자를 얻는다. 
