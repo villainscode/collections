@@ -343,13 +343,17 @@ List<User> list = Collections.EMPTY_LIST;       // 비권장
 Map<String, Object> maps = Collections.EMPTY_MAP; // 비권장 
 Set<String> sets = Collections.EMPTY_SET;         // 비권장 
 
-// 1.5 Generic 으로 인하 List<T> 반환하기 때문에 타입 안정성을 보장할 수 있다.
+// 1.5 Generic으로 인한 List<T> 반환하기 때문에 타입 안정성을 보장할 수 있다.
 List<User> collection1 = Collections.emptyList();
 Map<String, String> collection2 = Collections.emptyMap();
 Set<String> collection3 = Collections.emptySet();
 ```
 
 List<User> list = Collections.EMPTY_LIST의 경우 컴파일러가 타입 체크를 하지 않아 타입 불일치 문제나 에러가 발생할 여지가 있어서 Collections.emptyList()를 반환하는 것으로 권장한다. Collections.emptyList() 는 불변객체로써 값을 추가 할 수 없기 때문에 빈 객체를 리턴하는 경우에나 사용 가능하다.
+
+`Collections.EMPTY_LIST`, `Collections.EMPTY_MAP`, `Collections.EMPTY_SET`는 제네릭 타입이 지정되지 않은 비제네릭 컬렉션을 반환한다. 
+이는 타입 안전성을 보장하지 않으며, 컴파일러 경고를 발생시킬 수 있다. 
+예를 들어, `List<User>` 대신 `List`로 처리되기 때문에 타입 캐스팅 오류가 발생할 수 있다.
 
 아래의 Collections.java 구현 내용을 보면 금방 이해할 수 있을 것이다.
 
