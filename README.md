@@ -339,7 +339,7 @@ Set<String> userSet= new HashSet<String> ();
 일반적인 빈 Collection 객체를 반환해야 한다면 아래의 코드를 사용하여 리턴해줄 수 있다.
 
 ```java
-List<User> list = Collections.EMPTY_LIST();       // 비권장  
+List<User> list = Collections.EMPTY_LIST;       // 비권장  
 Map<String, Object> maps = Collections.EMPTY_MAP; // 비권장 
 Set<String> sets = Collections.EMPTY_SET;         // 비권장 
 
@@ -349,7 +349,7 @@ Map<String, String> collection2 = Collections.emptyMap();
 Set<String> collection3 = Collections.emptySet();
 ```
 
-List<User> list = Collections.EMPTY_LIST()의 경우 컴파일러가 타입 체크를 하지 않아 타입 불일치 문제나 에러가 발생할 여지가 있어서 Collections.emptyList()를 반환하는 것으로 권장한다. Collections.emptyList() 는 불변객체로써 값을 추가 할 수 없기 때문에 빈 객체를 리턴하는 경우에나 사용 가능하다.
+List<User> list = Collections.EMPTY_LIST의 경우 컴파일러가 타입 체크를 하지 않아 타입 불일치 문제나 에러가 발생할 여지가 있어서 Collections.emptyList()를 반환하는 것으로 권장한다. Collections.emptyList() 는 불변객체로써 값을 추가 할 수 없기 때문에 빈 객체를 리턴하는 경우에나 사용 가능하다.
 
 아래의 Collections.java 구현 내용을 보면 금방 이해할 수 있을 것이다.
 
@@ -362,7 +362,7 @@ public static final <T> List<T> emptyList() {
 public static final List EMPTY_LIST = new EmptyList<>();
 ```
 
-Collections.EMPTY_LIST() 메서드가 반환하는 객체는 List 타입으로만 사용할 수 있다는 것을 확인 할 수 있다.
+Collections.emptyList() 메서드가 반환하는 객체는 List 타입으로만 사용할 수 있다는 것을 확인 할 수 있다.
 
 # 4. Collection 의 사용
 
